@@ -39,23 +39,23 @@ export default function TemperatureAndDetails() {
       <div className='flex flex-row items-center justify-center space-x-2 text-white text-sm py-3'>
         <UilSun size={18} />
         <p className='font-light'>
-          Rise
-          <span className='font-medium ml-1'>6:00 AM</span>
-        </p>
-        <p className='font-light'>|</p>
-        <UilSun size={18} />
-        <p className='font-light'>
           Rise:
           <span className='font-medium ml-1'>6:00 AM</span>
         </p>
         <p className='font-light'>|</p>
         <UilSunset size={18} />
         <p className='font-light'>
+          Set:
+          <span className='font-medium ml-1'>6:00 AM</span>
+        </p>
+        <p className='font-light'>|</p>
+        <UilArrowUp size={18} />
+        <p className='font-light'>
           High:
           <span className='font-medium ml-1'>75°</span>
         </p>
         <p className='font-light'>|</p>
-        <UilSun size={18} />
+        <UilArrowDown size={18} />
         <p className='font-light'>
           Low:
           <span className='font-medium ml-1'>35°</span>
