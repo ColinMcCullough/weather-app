@@ -1,43 +1,34 @@
-import React from 'react'
+import React from "react";
+import { iconUrlFromCode } from "../services/weatherService";
 
-function Forecast({ title }) {
+function Forecast({ title, items }) {
+  console.log(items);
   return (
     <div>
       <div className="flex items-center justify-start mt-6">
-        <p className='text-white font-medium uppercase'>
-          {title}
-        </p>
+        <p className="text-white font-medium uppercase">{title}</p>
       </div>
-      <hr className='my-2' />
-      <div className='flex flex-row items-center justify-between text-white'>
-        <div className='flex flex-col items-center justify-center'>
-          <p className='text-sm'>4:30PM</p>
-          <img className='w-12 my-1' src="https://img.icons8.com/ios/50/000000/temperature.png" alt="temperature" />
-          <p className='text-sm'>32°</p>
-        </div>
-        <div className='flex flex-col items-center justify-center'>
-          <p className='text-sm'>4:30PM</p>
-          <img className='w-12 my-1' src="https://img.icons8.com/ios/50/000000/temperature.png" alt="temperature" />
-          <p className='text-sm'>32°</p>
-        </div>
-        <div className='flex flex-col items-center justify-center'>
-          <p className='text-sm'>4:30PM</p>
-          <img className='w-12 my-1' src="https://img.icons8.com/ios/50/000000/temperature.png" alt="temperature" />
-          <p className='text-sm'>32°</p>
-        </div>
-        <div className='flex flex-col items-center justify-center'>
-          <p className='text-sm'>4:30PM</p>
-          <img className='w-12 my-1' src="https://img.icons8.com/ios/50/000000/temperature.png" alt="temperature" />
-          <p className='text-sm'>32°</p>
-        </div>
-        <div className='flex flex-col items-center justify-center'>
-          <p className='text-sm'>4:30PM</p>
-          <img className='w-12 my-1' src="https://img.icons8.com/ios/50/000000/temperature.png" alt="temperature" />
-          <p className='text-sm'>32°</p>
-        </div>
+      <hr className="my-2" />
+
+      <div className="flex flex-row items-center justify-between text-white">
+
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center"
+          >
+            <p className="font-light text-sm">{item.title}</p>
+            <img
+              src={iconUrlFromCode(item.icon)}
+              className="w-12 my-1"
+              alt=""
+            />
+            <p className="font-medium">{`${item.temp.toFixed()}°`}</p>
+          </div>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Forecast
+export default Forecast;
