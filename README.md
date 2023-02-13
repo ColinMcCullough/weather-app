@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# React Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Single page web app for fetching weather forecasts. Uses https://openweathermap.org/ API.
+
+## .env
+REACT_APP_WEATHER_API_KEY=
 
 ## Available Scripts
 
